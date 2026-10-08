@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Budgets | SmartSpend AI</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+<link rel="stylesheet" href="css/budgets.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+<!-- =========================
+SIDEBAR
+========================= -->
+
+<aside class="sidebar">
+
+<div class="sidebar-logo">
+
+<i class="fa-solid fa-wallet"></i>
+
+<span>SmartSpend AI</span>
+
+</div>
+
+<ul class="sidebar-menu">
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Dashboard</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="expenses.html">
+
+<i class="fa-solid fa-receipt"></i>
+
+<span>Expenses</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="analytics.html">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<span>Analytics</span>
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="budgets.html">
+
+<i class="fa-solid fa-wallet"></i>
+
+<span>Budgets</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="reports.html">
+
+<i class="fa-solid fa-file-lines"></i>
+
+<span>Reports</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="ai.html">
+
+<i class="fa-solid fa-robot"></i>
+
+<span>AI Assistant</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!-- =========================
+MAIN CONTENT
+========================= -->
+
+<main class="dashboard-main">
+
+<header class="topbar">
+
+<div>
+
+<h1>
+
+Budget Management
+
+</h1>
+
+<p>
+
+Plan monthly budgets and monitor spending efficiently.
+
+</p>
+
+</div>
+
+<div class="topbar-right">
+
+<button class="btn-primary" id="createBudgetBtn">
+
+<i class="fa-solid fa-plus"></i>
+
+Create Budget
+
+</button>
+
+</div>
+
+</header>
+
+<!-- =========================
+SUMMARY CARDS
+========================= -->
+
+<section class="cards-grid">
+
+<div class="card">
+
+<div class="card-icon blue">
+
+<i class="fa-solid fa-wallet"></i>
+
+</div>
+
+<h4>Total Budget</h4>
+
+<p class="empty-text">
+
+₹0.00
+
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="card-icon green">
+
+<i class="fa-solid fa-piggy-bank"></i>
+
+</div>
+
+<h4>Remaining Budget</h4>
+
+<p class="empty-text">
+
+₹0.00
+
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="card-icon red">
+
+<i class="fa-solid fa-arrow-trend-down"></i>
+
+</div>
+
+<h4>Spent</h4>
+
+<p class="empty-text">
+
+₹0.00
+
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="card-icon purple">
+
+<i class="fa-solid fa-chart-simple"></i>
+
+</div>
+
+<h4>Budget Health</h4>
+
+<p class="empty-text">
+
+Not Available
+
+</p>
+
+</div>
+
+</section>
+
+<!-- =========================
+BUDGET GRID
+========================= -->
+
+<section class="budget-grid">
+<!-- ==========================================
+TOTAL MONTHLY BUDGET
+========================================== -->
+
+<div class="dashboard-widget">
+
+    <div class="widget-header">
+
+        <h3>Total Monthly Budget</h3>
+
+    </div>
+
+    <div class="widget-body">
+
+        <div class="progress">
+
+            <div class="progress-fill"></div>
+
+        </div>
+
+        <h4>Budget Not Created</h4>
+
+        <p>
+
+            Set your monthly budget to start tracking expenses.
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+FOOD
+========================================== -->
+
+<div class="dashboard-widget">
+
+    <div class="widget-header">
+
+        <h3>Food Budget</h3>
+
+    </div>
+
+    <div class="widget-body">
+
+        <div class="progress">
+
+            <div class="progress-fill"></div>
+
+        </div>
+
+        <h4>No Budget</h4>
+
+        <p>
+
+            Create a food budget.
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+SHOPPING
+========================================== -->
+
+<div class="dashboard-widget">
+
+    <div class="widget-header">
+
+        <h3>Shopping Budget</h3>
+
+    </div>
+
+    <div class="widget-body">
+
+        <div class="progress">
+
+            <div class="progress-fill"></div>
+
+        </div>
+
+        <h4>No Budget</h4>
+
+        <p>
+
+            Create a shopping budget.
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+TRAVEL
+========================================== -->
+
+<div class="dashboard-widget">
+
+    <div class="widget-header">
+
+        <h3>Travel Budget</h3>
+
+    </div>
+
+    <div class="widget-body">
+
+        <div class="progress">
+
+            <div class="progress-fill"></div>
+
+        </div>
+
+        <h4>No Budget</h4>
+
+        <p>
+
+            Create a travel budget.
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+BILLS
+========================================== -->
+
+<div class="dashboard-widget">
+
+    <div class="widget-header">
+
+        <h3>Bills Budget</h3>
+
+    </div>
+
+    <div class="widget-body">
+
+        <div class="progress">
+
+            <div class="progress-fill"></div>
+
+        </div>
+
+        <h4>No Budget</h4>
+
+        <p>
+
+            Create a monthly bills budget.
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+ENTERTAINMENT
+========================================== -->
+
+<div class="dashboard-widget">
+
+    <div class="widget-header">
+
+        <h3>Entertainment Budget</h3>
+
+    </div>
+
+    <div class="widget-body">
+
+        <div class="progress">
+
+            <div class="progress-fill"></div>
+
+        </div>
+
+        <h4>No Budget</h4>
+
+        <p>
+
+            Create an entertainment budget.
+
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+AI BUDGET SUGGESTIONS
+========================================== -->
+
+<section class="dashboard-widget">
+
+    <div class="widget-header">
+
+        <h3>
+
+            🤖 AI Budget Suggestions
+
+        </h3>
+
+    </div>
+
+    <div class="empty-state">
+
+        <i class="fa-solid fa-robot"></i>
+
+        <h4>
+
+            No Suggestions Yet
+
+        </h4>
+
+        <p>
+
+            SmartSpend AI will recommend budget allocations after analyzing your spending history.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+BUDGET HISTORY
+========================================== -->
+
+<section class="dashboard-widget">
+
+    <div class="widget-header">
+
+        <h3>
+
+            Budget History
+
+        </h3>
+
+    </div>
+
+    <div class="empty-state">
+
+        <i class="fa-solid fa-clock-rotate-left"></i>
+
+        <h4>
+
+            No Previous Budgets
+
+        </h4>
+
+        <p>
+
+            Your monthly budget history will appear here.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+BUDGET ALERTS
+========================================== -->
+
+<section class="dashboard-widget">
+
+    <div class="widget-header">
+
+        <h3>
+
+            Budget Alerts
+
+        </h3>
+
+    </div>
+
+    <div class="empty-state">
+
+        <i class="fa-solid fa-triangle-exclamation"></i>
+
+        <h4>
+
+            No Alerts
+
+        </h4>
+
+        <p>
+
+            SmartSpend AI will notify you when your spending approaches or exceeds your budget.
+
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+
+<script src="js/budgets.js"></script>
+
+</body>
+
+</html>

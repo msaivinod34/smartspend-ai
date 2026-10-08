@@ -1,0 +1,107 @@
+/* ==========================================
+   BUDGET PAGE
+========================================== */
+
+.budget-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:25px;
+
+margin:30px 0;
+
+}
+
+.budget-grid .dashboard-widget{
+
+transition:.3s;
+
+}
+
+.budget-grid .dashboard-widget:hover{
+
+transform:translateY(-6px);
+
+}
+
+.progress{
+
+height:14px;
+
+background:#E2E8F0;
+
+border-radius:999px;
+
+overflow:hidden;
+
+margin:20px 0;
+
+}
+
+.progress-fill{
+
+width:0%;
+
+height:100%;
+
+background:linear-gradient(90deg,#2563EB,#10B981);
+
+transition:.5s;
+
+}
+
+.dashboard-widget h3{
+
+margin-bottom:15px;
+
+font-size:22px;
+
+}
+
+.dashboard-widget h4{
+
+margin-bottom:10px;
+
+color:#1E293B;
+
+}
+
+.dashboard-widget p{
+
+color:#64748B;
+
+line-height:1.7;
+
+}
+
+#createBudgetBtn{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+}
+
+@media(max-width:1200px){
+
+.budget-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.budget-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}

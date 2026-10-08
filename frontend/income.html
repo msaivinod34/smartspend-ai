@@ -1,0 +1,640 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet" href="css/income.css">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Income - SmartSpend AI</title>
+
+    <link rel="stylesheet" href="income.css">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- ==========================================
+         SIDEBAR
+    =========================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-wallet"></i>
+
+            <span>
+                SmartSpend<br>
+                <strong>AI</strong>
+            </span>
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="expenses.html">
+                <i class="fa-solid fa-receipt"></i>
+                <span>Expenses</span>
+            </a>
+
+            <a href="income.html" class="active">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                <span>Income</span>
+            </a>
+
+            <a href="analytics.html">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Analytics</span>
+            </a>
+
+            <a href="budgets.html">
+                <i class="fa-solid fa-wallet"></i>
+                <span>Budgets</span>
+            </a>
+
+            <a href="reports.html">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Reports</span>
+            </a>
+
+            <a href="ai_assistant.html">
+                <i class="fa-solid fa-robot"></i>
+                <span>AI Assistant</span>
+            </a>
+
+            <a href="settings.html">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+    =========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="page-header">
+
+            <div>
+                <h1>Income</h1>
+
+                <p>
+                    Track your income and improve your financial health.
+                </p>
+            </div>
+
+            <div class="header-actions">
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        placeholder="Search income..."
+                    >
+
+                </div>
+
+                <button class="notification-btn">
+                    <i class="fa-regular fa-bell"></i>
+                </button>
+
+                <div class="profile">
+                    <span>SA</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ==========================================
+             SUMMARY CARDS
+        =========================================== -->
+
+        <section class="summary-grid">
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon blue">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                </div>
+
+                <div>
+
+                    <h3>Total Income</h3>
+
+                    <strong id="totalIncome">
+                        ₹0.00
+                    </strong>
+
+                    <p>
+                        Total income recorded
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon green">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+
+                <div>
+
+                    <h3>This Month</h3>
+
+                    <strong id="monthlyIncome">
+                        ₹0.00
+                    </strong>
+
+                    <p>
+                        Income received this month
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon purple">
+                    <i class="fa-solid fa-repeat"></i>
+                </div>
+
+                <div>
+
+                    <h3>Recurring Income</h3>
+
+                    <strong id="recurringIncome">
+                        ₹0.00
+                    </strong>
+
+                    <p>
+                        Expected recurring income
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon orange">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+
+                <div>
+
+                    <h3>Main Source</h3>
+
+                    <strong id="mainIncomeSource">
+                        --
+                    </strong>
+
+                    <p>
+                        Highest income source
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             ADD INCOME + AI INSIGHT
+        =========================================== -->
+
+        <section class="content-grid">
+
+
+            <!-- ADD INCOME -->
+
+            <div class="card add-income-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            <i class="fa-solid fa-plus"></i>
+                            Add Income
+                        </h2>
+
+                        <p>
+                            Record a new income transaction.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <form id="incomeForm">
+
+
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Income Amount
+                            </label>
+
+                            <div class="amount-input">
+
+                                <span>₹</span>
+
+                                <input
+                                    type="number"
+                                    id="amount"
+                                    name="amount"
+                                    placeholder="Enter amount"
+                                    min="0"
+                                    step="0.01"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Income Type
+                            </label>
+
+                            <select
+                                id="incomeType"
+                                name="incomeType"
+                                required
+                            >
+
+                                <option value="">
+                                    Select income type
+                                </option>
+
+                                <option value="Salary">
+                                    Salary
+                                </option>
+
+                                <option value="Freelance">
+                                    Freelance
+                                </option>
+
+                                <option value="Business">
+                                    Business
+                                </option>
+
+                                <option value="Investment">
+                                    Investment
+                                </option>
+
+                                <option value="Bonus">
+                                    Bonus
+                                </option>
+
+                                <option value="Gift">
+                                    Gift
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Income Source
+                            </label>
+
+                            <input
+                                type="text"
+                                id="source"
+                                name="source"
+                                placeholder="e.g. Company, Client, Business"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="incomeDate"
+                                name="incomeDate"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Description
+                        </label>
+
+                        <textarea
+                            id="description"
+                            name="description"
+                            rows="3"
+                            placeholder="Add a note about this income..."
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <div class="recurring-box">
+
+                        <div class="recurring-left">
+
+                            <div class="recurring-icon">
+                                <i class="fa-solid fa-repeat"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Recurring Income
+                                </strong>
+
+                                <p>
+                                    Automatically consider this as
+                                    regular income.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <label class="switch">
+
+                            <input
+                                type="checkbox"
+                                id="recurring"
+                            >
+
+                            <span class="slider"></span>
+
+                        </label>
+
+                    </div>
+
+
+
+                    <button
+                        type="submit"
+                        class="add-income-btn"
+                    >
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Add Income
+
+                    </button>
+
+
+                </form>
+
+            </div>
+
+
+
+            <!-- AI INSIGHT -->
+
+            <div class="card ai-card">
+
+                <div class="ai-title">
+
+                    <span class="ai-icon">
+                        🤖
+                    </span>
+
+                    <h2>
+                        AI Income Insight
+                    </h2>
+
+                </div>
+
+
+                <div class="ai-content">
+
+                    <div class="robot-icon">
+
+                        <i class="fa-solid fa-robot"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Smart Income Analysis
+                    </h3>
+
+
+                    <p>
+                        SmartSpend AI will analyze your income
+                        sources and identify your earning patterns,
+                        recurring income and potential opportunities
+                        to improve your financial stability.
+                    </p>
+
+
+                    <div class="ai-features">
+
+                        <div>
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span>Income trends</span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-lightbulb"></i>
+                            <span>Smart recommendations</span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-shield-heart"></i>
+                            <span>Financial stability</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             INCOME TRANSACTIONS
+        =========================================== -->
+
+        <section class="card transactions-card">
+
+
+            <div class="transactions-header">
+
+                <div>
+
+                    <h2>
+                        <i class="fa-solid fa-table-list"></i>
+                        Income Transactions
+                    </h2>
+
+                    <p>
+                        All your recorded income transactions.
+                    </p>
+
+                </div>
+
+
+                <div class="transaction-count">
+
+                    <span id="incomeCount">
+                        0 Records
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Date</th>
+
+                            <th>Source</th>
+
+                            <th>Type</th>
+
+                            <th>Amount</th>
+
+                            <th>Recurring</th>
+
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="incomeTableBody">
+
+                        <tr class="empty-row">
+
+                            <td colspan="6">
+
+                                <div class="empty-state">
+
+                                    <i class="fa-solid fa-wallet"></i>
+
+                                    <h3>
+                                        No Income Added
+                                    </h3>
+
+                                    <p>
+                                        Add your first income transaction
+                                        to start tracking your earnings.
+                                    </p>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+<script src="js/income.js"></script>
+</body>
+</html>

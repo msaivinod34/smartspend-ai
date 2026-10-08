@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reports | SmartSpend AI</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet">
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="stylesheet"
+      href="css/style.css">
+
+<link rel="stylesheet"
+      href="css/dashboard.css">
+
+<link rel="stylesheet"
+      href="css/reports.css">
+
+</head>
+
+
+<body>
+
+<div class="dashboard-layout">
+
+
+<!-- ==========================================
+     SIDEBAR
+========================================== -->
+
+<aside class="sidebar">
+
+    <div class="sidebar-logo">
+
+        <i class="fa-solid fa-wallet"></i>
+
+        <span>SmartSpend AI</span>
+
+    </div>
+
+
+    <ul class="sidebar-menu">
+
+        <li>
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Dashboard</span>
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="expenses.html">
+
+                <i class="fa-solid fa-receipt"></i>
+
+                <span>Expenses</span>
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="analytics.html">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <span>Analytics</span>
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="budgets.html">
+
+                <i class="fa-solid fa-wallet"></i>
+
+                <span>Budgets</span>
+
+            </a>
+
+        </li>
+
+
+        <li class="active">
+
+            <a href="reports.html">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                <span>Reports</span>
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="ai.html">
+
+                <i class="fa-solid fa-robot"></i>
+
+                <span>AI Assistant</span>
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="settings.html">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>Settings</span>
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</aside>
+
+
+
+<!-- ==========================================
+     MAIN
+========================================== -->
+
+<main class="dashboard-main">
+
+
+<!-- ==========================================
+     TOPBAR
+========================================== -->
+
+<header class="topbar">
+
+    <div>
+
+        <h1>
+            Financial Reports
+        </h1>
+
+        <p>
+            Generate and download reports based on your financial records.
+        </p>
+
+    </div>
+
+</header>
+
+
+
+<!-- ==========================================
+     SUMMARY CARDS
+========================================== -->
+
+<section class="cards-grid">
+
+
+    <div class="card">
+
+        <div class="card-icon blue">
+
+            <i class="fa-solid fa-calendar"></i>
+
+        </div>
+
+        <h4>
+            Monthly Report
+        </h4>
+
+        <p class="empty-text">
+            No report generated.
+        </p>
+
+    </div>
+
+
+
+    <div class="card">
+
+        <div class="card-icon green">
+
+            <i class="fa-solid fa-chart-pie"></i>
+
+        </div>
+
+        <h4>
+            Category Report
+        </h4>
+
+        <p class="empty-text">
+            No report generated.
+        </p>
+
+    </div>
+
+
+
+    <div class="card">
+
+        <div class="card-icon red">
+
+            <i class="fa-solid fa-file-pdf"></i>
+
+        </div>
+
+        <h4>
+            PDF Export
+        </h4>
+
+        <p class="empty-text">
+            Ready after data is available.
+        </p>
+
+    </div>
+
+
+
+    <div class="card">
+
+        <div class="card-icon purple">
+
+            <i class="fa-solid fa-file-excel"></i>
+
+        </div>
+
+        <h4>
+            Excel Export
+        </h4>
+
+        <p class="empty-text">
+            Ready after data is available.
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==========================================
+     REPORTS GRID
+========================================== -->
+
+<section class="reports-grid">
+
+
+<!-- ==========================================
+     AI NEXT MONTH EXPENSE PREDICTION
+========================================== -->
+
+<div class="dashboard-widget prediction-card">
+
+    <div class="widget-header">
+
+        <div>
+
+            <h3>
+
+                <i class="fa-solid fa-robot"></i>
+
+                AI Next Month Expense Prediction
+
+            </h3>
+
+            <p>
+
+                Predicted spending for your next month
+                using the trained Extra Trees ML model.
+
+            </p>
+
+        </div>
+
+
+        <span class="ai-badge">
+
+            AI Prediction
+
+        </span>
+
+    </div>
+
+
+
+    <div class="prediction-content">
+
+
+        <div class="prediction-icon">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+        </div>
+
+
+        <div class="prediction-result">
+
+            <span class="prediction-label">
+
+                Expected Expenses
+
+            </span>
+
+
+            <h2 id="nextMonthPrediction">
+
+                ₹0.00
+
+            </h2>
+
+
+            <p id="predictionStatus">
+
+                Calculating prediction...
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="prediction-features">
+
+
+        <div>
+
+            <span>
+                Model
+            </span>
+
+            <strong>
+                Extra Trees
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                Prediction
+            </span>
+
+            <strong>
+                Next Month
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                Status
+            </span>
+
+            <strong id="predictionModelStatus">
+
+                Loading...
+
+            </strong>
+
+        </div>
+
+
+    </div>
+
+
+
+    <button
+        id="refreshPredictionBtn"
+        class="btn-primary prediction-btn">
+
+        <i class="fa-solid fa-rotate"></i>
+
+        Generate Prediction
+
+    </button>
+
+
+</div>
+
+
+
+<!-- ==========================================
+     REPORT HISTORY
+========================================== -->
+
+<div class="dashboard-widget">
+
+    <div class="widget-header">
+
+        <h3>
+            Report History
+        </h3>
+
+    </div>
+
+
+    <div class="empty-state">
+
+        <i class="fa-solid fa-clock-rotate-left"></i>
+
+        <h4>
+            No Reports Generated
+        </h4>
+
+        <p>
+            Generated reports will be available here
+            for quick access.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- ==========================================
+     AI REPORT SUMMARY
+========================================== -->
+
+<div class="dashboard-widget">
+
+    <div class="widget-header">
+
+        <h3>
+            AI Financial Summary
+        </h3>
+
+    </div>
+
+
+    <div class="empty-state">
+
+        <i class="fa-solid fa-robot"></i>
+
+        <h4>
+            No AI Summary
+        </h4>
+
+        <p>
+
+            SmartSpend AI will generate an intelligent
+            summary after enough financial data has been collected.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- ==========================================
+     REPORT FILTERS
+========================================== -->
+
+<div class="dashboard-widget">
+
+    <div class="widget-header">
+
+        <h3>
+            Report Filters
+        </h3>
+
+    </div>
+
+
+    <div class="widget-body">
+
+        <div class="form-grid">
+
+
+            <div class="input-group">
+
+                <label>
+                    From Date
+                </label>
+
+                <input
+                    type="date">
+
+            </div>
+
+
+
+            <div class="input-group">
+
+                <label>
+                    To Date
+                </label>
+
+                <input
+                    type="date">
+
+            </div>
+
+
+
+            <div class="input-group">
+
+                <label>
+                    Category
+                </label>
+
+                <select>
+
+                    <option>
+                        All Categories
+                    </option>
+
+                    <option>
+                        Food
+                    </option>
+
+                    <option>
+                        Shopping
+                    </option>
+
+                    <option>
+                        Transport
+                    </option>
+
+                    <option>
+                        Fuel
+                    </option>
+
+                    <option>
+                        Travel
+                    </option>
+
+                    <option>
+                        Bills
+                    </option>
+
+                    <option>
+                        Medical
+                    </option>
+
+                    <option>
+                        Education
+                    </option>
+
+                    <option>
+                        Entertainment
+                    </option>
+
+                    <option>
+                        Investment
+                    </option>
+
+                    <option>
+                        EMI
+                    </option>
+
+                    <option>
+                        Others
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="input-group">
+
+                <label>
+                    Report Type
+                </label>
+
+                <select>
+
+                    <option>
+                        Monthly
+                    </option>
+
+                    <option>
+                        Weekly
+                    </option>
+
+                    <option>
+                        Yearly
+                    </option>
+
+                </select>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ==========================================
+     EXPORT CENTER
+========================================== -->
+
+<div class="dashboard-widget">
+
+    <div class="widget-header">
+
+        <h3>
+            Export Center
+        </h3>
+
+    </div>
+
+
+    <div class="widget-body">
+
+
+        <button
+            class="btn-primary"
+            style="width:100%;margin-bottom:15px;">
+
+            <i class="fa-solid fa-file-pdf"></i>
+
+            Download PDF
+
+        </button>
+
+
+
+        <button
+            class="btn-outline"
+            style="width:100%;margin-bottom:15px;">
+
+            <i class="fa-solid fa-file-excel"></i>
+
+            Download Excel
+
+        </button>
+
+
+
+        <button
+            class="btn-outline"
+            style="width:100%;">
+
+            <i class="fa-solid fa-file-csv"></i>
+
+            Download CSV
+
+        </button>
+
+
+    </div>
+
+</div>
+
+
+</section>
+
+
+</main>
+
+</div>
+
+
+
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
+
+<script src="js/dashboard.js"></script>
+
+<script src="js/reports.js"></script>
+
+
+</body>
+
+</html>

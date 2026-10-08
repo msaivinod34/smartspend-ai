@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+backend/venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Python tooling
+.pytest_cache/
+.mypy_cache/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Local databases / generated files
+*.sqlite
+*.db
+
+# Node
+node_modules/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Uploads
+backend/uploads/*
+frontend/uploads/*
+
+# ML temporary/cache files
+*.pkl
+*.pickle
+
+# Jupyter
+.ipynb_checkpoints/

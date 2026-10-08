@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Settings | SmartSpend AI</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+<link rel="stylesheet" href="css/settings.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+<!-- Sidebar -->
+<aside class="sidebar">
+
+<div class="sidebar-logo">
+
+<i class="fa-solid fa-wallet"></i>
+
+<span>SmartSpend AI</span>
+
+</div>
+
+<ul class="sidebar-menu">
+
+<li><a href="dashboard.html"><i class="fa-solid fa-house"></i><span>Dashboard</span></a></li>
+
+<li><a href="expenses.html"><i class="fa-solid fa-receipt"></i><span>Expenses</span></a></li>
+
+<li><a href="analytics.html"><i class="fa-solid fa-chart-line"></i><span>Analytics</span></a></li>
+
+<li><a href="budgets.html"><i class="fa-solid fa-wallet"></i><span>Budgets</span></a></li>
+
+<li><a href="reports.html"><i class="fa-solid fa-file-lines"></i><span>Reports</span></a></li>
+
+<li><a href="ai.html"><i class="fa-solid fa-robot"></i><span>AI Assistant</span></a></li>
+
+<li class="active">
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<main class="dashboard-main">
+
+<header class="topbar">
+
+<h1>Settings</h1>
+
+<div class="search-box">
+
+<i class="fa-solid fa-search"></i>
+
+<input type="text" placeholder="Search settings...">
+
+</div>
+
+</header>
+
+<div class="settings-container">
+
+<!-- Appearance -->
+
+<div class="settings-card">
+
+<h5>Appearance</h5>
+
+<div class="setting-row">
+
+<div>
+
+<h4>Dark Mode</h4>
+
+<p>Enable dark theme</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+</div>
+
+<!-- Preferences -->
+
+<div class="settings-card">
+
+<h5>Preferences</h5>
+
+<div class="setting-row">
+
+<div>
+
+<h4>Currency</h4>
+
+<p>Select your preferred currency</p>
+
+</div>
+
+<select>
+
+<option>₹ Indian Rupee (INR)</option>
+
+<option>$ US Dollar (USD)</option>
+
+<option>€ Euro (EUR)</option>
+
+<option>£ Pound (GBP)</option>
+
+</select>
+
+</div>
+
+</div>
+
+<!-- Notifications -->
+
+<div class="settings-card">
+
+<h5>Notifications</h5>
+<div class="setting-row">
+
+<div>
+
+<h4>Budget Warnings</h4>
+
+<p>Alert when you're close to your monthly budget.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting-row">
+
+<div>
+
+<h4>Upcoming Bills</h4>
+
+<p>Receive reminders before bill due dates.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting-row">
+
+<div>
+
+<h4>Anomaly Alerts</h4>
+
+<p>Notify me about unusual spending activity.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting-row">
+
+<div>
+
+<h4>Weekly Digest</h4>
+
+<p>Receive a weekly spending summary.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+</div>
+
+<!-- Security -->
+
+<div class="settings-card">
+
+<h5>Security</h5>
+
+<div class="security-item">
+
+<span>Change Password</span>
+
+<i class="fa-solid fa-chevron-right"></i>
+
+</div>
+
+<div class="security-item">
+
+<span>Two-Factor Authentication</span>
+
+<i class="fa-solid fa-chevron-right"></i>
+
+</div>
+
+<div class="security-item">
+
+<span>Active Sessions</span>
+
+<i class="fa-solid fa-chevron-right"></i>
+
+</div>
+
+<div class="security-item">
+
+<span>Data Export</span>
+
+<i class="fa-solid fa-chevron-right"></i>
+
+</div>
+
+</div>
+
+<!-- User Card -->
+
+<div class="settings-card profile-card">
+
+<div class="profile-info">
+
+<img src="https://ui-avatars.com/api/?name=User&background=2563EB&color=fff">
+
+<div>
+
+<h4>User Name</h4>
+
+<p>user@example.com</p>
+
+</div>
+
+</div>
+
+<button class="logout-btn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Sign Out
+
+</button>
+
+</div>
+
+</div>
+
+</main>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+
+<script src="js/settings.js"></script>
+
+</body>
+
+</html>

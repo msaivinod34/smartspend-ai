@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Profile | SmartSpend AI</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+<link rel="stylesheet" href="css/profile.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+<aside class="sidebar">
+
+<div class="sidebar-logo">
+
+<i class="fa-solid fa-wallet"></i>
+
+<span>SmartSpend AI</span>
+
+</div>
+
+<ul class="sidebar-menu">
+
+<li><a href="dashboard.html"><i class="fa-solid fa-house"></i><span>Dashboard</span></a></li>
+
+<li><a href="expenses.html"><i class="fa-solid fa-receipt"></i><span>Expenses</span></a></li>
+
+<li><a href="analytics.html"><i class="fa-solid fa-chart-line"></i><span>Analytics</span></a></li>
+
+<li><a href="budgets.html"><i class="fa-solid fa-wallet"></i><span>Budgets</span></a></li>
+
+<li><a href="reports.html"><i class="fa-solid fa-file-lines"></i><span>Reports</span></a></li>
+
+<li><a href="ai.html"><i class="fa-solid fa-robot"></i><span>AI Assistant</span></a></li>
+
+<li><a href="settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a></li>
+
+<li class="active">
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+<span>Profile</span>
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<main class="dashboard-main">
+
+<header class="topbar">
+
+<div>
+
+<h1>My Profile</h1>
+
+<p>Manage your SmartSpend AI account information.</p>
+
+</div>
+
+</header>
+
+<div class="profile-container">
+
+<!-- Profile Card -->
+
+<div class="profile-card">
+
+<img src="https://ui-avatars.com/api/?name=User&background=2563EB&color=ffffff&size=200">
+
+<h2>User Name</h2>
+
+<p>user@example.com</p>
+
+<button class="btn-primary">
+
+<i class="fa-solid fa-camera"></i>
+
+Change Photo
+
+</button>
+
+</div>
+
+<!-- Profile Details -->
+
+<div class="profile-details">
+
+<h3>Personal Information</h3>
+
+<div class="profile-grid">
+<!-- =========================
+FULL NAME
+========================= -->
+
+<div class="input-group">
+
+<label>Full Name</label>
+
+<input
+type="text"
+placeholder="Enter your full name">
+
+</div>
+
+<!-- =========================
+EMAIL
+========================= -->
+
+<div class="input-group">
+
+<label>Email Address</label>
+
+<input
+type="email"
+placeholder="Enter your email">
+
+</div>
+
+<!-- =========================
+PHONE
+========================= -->
+
+<div class="input-group">
+
+<label>Phone Number</label>
+
+<input
+type="text"
+placeholder="+91 XXXXX XXXXX">
+
+</div>
+
+<!-- =========================
+DATE OF BIRTH
+========================= -->
+
+<div class="input-group">
+
+<label>Date of Birth</label>
+
+<input
+type="date">
+
+</div>
+
+<!-- =========================
+OCCUPATION
+========================= -->
+
+<div class="input-group">
+
+<label>Occupation</label>
+
+<input
+type="text"
+placeholder="Student / Employee">
+
+</div>
+
+<!-- =========================
+COUNTRY
+========================= -->
+
+<div class="input-group">
+
+<label>Country</label>
+
+<select>
+
+<option>India</option>
+
+<option>United States</option>
+
+<option>United Kingdom</option>
+
+<option>Canada</option>
+
+<option>Australia</option>
+
+</select>
+
+</div>
+
+<button class="btn-primary save-profile">
+
+<i class="fa-solid fa-floppy-disk"></i>
+
+Save Profile
+
+</button>
+
+</div>
+
+</div>
+
+<!-- =========================
+ACCOUNT STATISTICS
+========================= -->
+
+<section class="cards-grid">
+
+<div class="card">
+
+<div class="card-icon blue">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+</div>
+
+<h4>Member Since</h4>
+
+<p class="empty-text">
+
+Not Available
+
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="card-icon green">
+
+<i class="fa-solid fa-wallet"></i>
+
+</div>
+
+<h4>Total Transactions</h4>
+
+<p class="empty-text">
+
+0
+
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="card-icon red">
+
+<i class="fa-solid fa-chart-line"></i>
+
+</div>
+
+<h4>Reports Generated</h4>
+
+<p class="empty-text">
+
+0
+
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="card-icon purple">
+
+<i class="fa-solid fa-robot"></i>
+
+</div>
+
+<h4>AI Insights</h4>
+
+<p class="empty-text">
+
+0
+
+</p>
+
+</div>
+
+</section>
+
+<!-- =========================
+RECENT ACTIVITY
+========================= -->
+
+<section class="dashboard-widget">
+
+<div class="widget-header">
+
+<h3>
+
+Recent Activity
+
+</h3>
+
+</div>
+
+<div class="empty-state">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+<h4>
+
+No Recent Activity
+
+</h4>
+
+<p>
+
+Your latest account activity will appear here after using SmartSpend AI.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- =========================
+LINKED ACCOUNTS
+========================= -->
+
+<section class="dashboard-widget">
+
+<div class="widget-header">
+
+<h3>
+
+Linked Accounts
+
+</h3>
+
+</div>
+
+<div class="empty-state">
+
+<i class="fa-solid fa-link"></i>
+
+<h4>
+
+No Accounts Linked
+
+</h4>
+
+<p>
+
+Bank accounts and payment providers will appear here after integration.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- =========================
+LOGOUT
+========================= -->
+
+<div style="margin-top:30px;text-align:right;">
+
+<button class="logout-btn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</button>
+
+</div>
+
+</main>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+
+<script src="js/profile.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1095 @@
+/* =========================================================
+   SMARTSPEND AI - DASHBOARD CSS
+   CLEAN + RESPONSIVE + NO HORIZONTAL OVERFLOW
+========================================================= */
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
+:root {
+    --primary: #2563eb;
+    --primary-light: #eef4ff;
+    --secondary: #10b981;
+    --accent: #7c3aed;
+
+    --danger: #ef4444;
+    --warning: #f59e0b;
+
+    --bg: #f8fafc;
+    --card: #ffffff;
+
+    --text: #1e293b;
+    --text-light: #64748b;
+
+    --border: #e2e8f0;
+
+    --radius: 20px;
+
+    --shadow: 0 10px 30px rgba(15, 23, 42, 0.07);
+}
+
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.dashboard-layout {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background: var(--bg);
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 320px;
+
+    background: #ffffff;
+
+    border-right: 1px solid var(--border);
+
+    padding: 30px 22px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    z-index: 1000;
+
+    flex-shrink: 0;
+}
+
+
+/* Sidebar Logo */
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 45px;
+
+    color: var(--primary);
+
+    font-size: 28px;
+    font-weight: 700;
+
+    line-height: 1.15;
+}
+
+.sidebar-logo i {
+    flex-shrink: 0;
+}
+
+
+/* Sidebar Menu */
+
+.sidebar-menu {
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    width: 100%;
+
+    margin-bottom: 10px;
+
+    border-radius: 14px;
+
+    transition: 0.25s ease;
+}
+
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    gap: 15px;
+
+    padding: 15px 18px;
+
+    color: var(--text-light);
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    border-radius: 14px;
+
+    transition: 0.25s ease;
+}
+
+.sidebar-menu li a i {
+    width: 20px;
+
+    text-align: center;
+
+    flex-shrink: 0;
+}
+
+.sidebar-menu li:hover {
+    background: var(--primary-light);
+}
+
+.sidebar-menu li:hover a {
+    color: var(--primary);
+}
+
+
+/* Active Menu */
+
+.sidebar-menu li.active {
+    background: var(--primary);
+}
+
+.sidebar-menu li.active a {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.dashboard-main {
+    width: calc(100% - 320px);
+
+    min-width: 0;
+
+    margin-left: 320px;
+
+    padding: 35px;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    max-width: 100%;
+
+    margin-bottom: 30px;
+
+    gap: 25px;
+}
+
+.topbar > div:first-child {
+    min-width: 0;
+}
+
+.topbar h1 {
+    margin: 0 0 8px;
+
+    font-size: 34px;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    overflow-wrap: break-word;
+}
+
+.topbar p {
+    margin: 0;
+
+    color: var(--text-light);
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   TOPBAR RIGHT
+========================================================= */
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    min-width: 0;
+
+    flex-shrink: 1;
+}
+
+
+/* Search */
+
+.search-box {
+    display: flex;
+    align-items: center;
+
+    width: 320px;
+    max-width: 100%;
+
+    height: 52px;
+
+    padding: 0 16px;
+
+    gap: 12px;
+
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+
+    flex-shrink: 1;
+}
+
+.search-box i {
+    color: var(--text);
+
+    flex-shrink: 0;
+}
+
+.search-box input {
+    width: 100%;
+    min-width: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-size: 15px;
+    color: var(--text);
+}
+
+
+/* Notification */
+
+.notification-btn {
+    width: 52px;
+    height: 52px;
+
+    border: none;
+
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    box-shadow: var(--shadow);
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    color: var(--text);
+
+    flex-shrink: 0;
+}
+
+
+/* Avatar */
+
+.avatar {
+    width: 52px;
+    height: 52px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   SUMMARY CARDS
+========================================================= */
+
+.cards-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 22px;
+
+    width: 100%;
+    max-width: 100%;
+
+    margin-bottom: 30px;
+}
+
+.card {
+    width: 100%;
+    min-width: 0;
+
+    padding: 25px;
+
+    background: var(--card);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+
+    transition: 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 60px;
+    height: 60px;
+
+    margin-bottom: 18px;
+
+    border-radius: 16px;
+
+    color: #ffffff;
+
+    font-size: 22px;
+}
+
+.card-icon.blue,
+.blue {
+    background: var(--primary);
+}
+
+.card-icon.green,
+.green {
+    background: var(--secondary);
+}
+
+.card-icon.red,
+.red {
+    background: var(--danger);
+}
+
+.card-icon.purple,
+.purple {
+    background: var(--accent);
+}
+
+.card h4 {
+    margin: 0 0 8px;
+
+    font-size: 20px;
+
+    overflow-wrap: break-word;
+}
+
+.card p {
+    margin: 0;
+
+    color: var(--text-light);
+
+    line-height: 1.6;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   DASHBOARD GRID
+========================================================= */
+
+.dashboard-content,
+.dashboard-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 2fr)
+        minmax(280px, 1fr);
+
+    gap: 25px;
+
+    width: 100%;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   WIDGET
+========================================================= */
+
+.dashboard-widget {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+    background: #ffffff;
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   WIDGET HEADER
+========================================================= */
+
+.widget-header {
+    width: 100%;
+
+    margin-bottom: 20px;
+}
+
+.widget-header h3 {
+    margin: 0;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   WIDGET BODY
+========================================================= */
+
+.widget-body {
+    width: 100%;
+    max-width: 100%;
+
+    text-align: center;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    min-height: 220px;
+
+    padding: 30px 20px;
+
+    text-align: center;
+}
+
+.empty-state i {
+    margin-bottom: 18px;
+
+    font-size: 48px;
+
+    color: var(--primary);
+}
+
+.empty-state h4 {
+    margin: 0 0 12px;
+
+    font-size: 20px;
+}
+
+.empty-state p {
+    max-width: 600px;
+
+    margin: 0;
+
+    color: var(--text-light);
+
+    line-height: 1.7;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   CHART PLACEHOLDER
+========================================================= */
+
+.chart-placeholder {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 100%;
+
+    min-height: 260px;
+
+    padding: 30px;
+
+    border: 2px dashed #cbd5e1;
+
+    border-radius: 18px;
+
+    background: #f8fafc;
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+.chart-placeholder i {
+    margin-bottom: 18px;
+
+    font-size: 55px;
+
+    color: var(--primary);
+}
+
+.chart-placeholder h4 {
+    margin: 0 0 10px;
+
+    font-size: 21px;
+}
+
+.chart-placeholder p {
+    max-width: 420px;
+
+    margin: 0;
+
+    color: var(--text-light);
+
+    line-height: 1.7;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   SCORE CIRCLE
+========================================================= */
+
+.score-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 130px;
+    height: 130px;
+
+    margin: 20px auto;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color: #ffffff;
+
+    font-size: 34px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FINANCIAL HEALTH
+========================================================= */
+
+.financial-health {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+}
+
+.financial-health .score-circle {
+    max-width: 130px;
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.progress {
+    width: 100%;
+    height: 14px;
+
+    margin: 25px 0;
+
+    background: #e2e8f0;
+
+    border-radius: 999px;
+
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+
+    background: var(--secondary);
+
+    border-radius: inherit;
+
+    transition: width 0.4s ease;
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+========================================================= */
+
+.quick-actions {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+}
+
+.quick-actions button,
+.quick-actions .btn-primary,
+.quick-actions .btn-outline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    padding: 14px 18px;
+
+    margin-bottom: 12px;
+
+    gap: 8px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TABLES
+========================================================= */
+
+.table-container {
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: auto;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BUTTON SAFETY
+========================================================= */
+
+button,
+input,
+select,
+textarea {
+    max-width: 100%;
+}
+
+img,
+svg,
+canvas {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   ANALYTICS
+========================================================= */
+
+.analytics-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: 25px;
+
+    width: 100%;
+    max-width: 100%;
+}
+
+.analytics-grid > * {
+    min-width: 0;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   REPORTS / BUDGETS / SETTINGS
+========================================================= */
+
+.reports-grid,
+.budgets-grid,
+.settings-grid {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+}
+
+.reports-grid > *,
+.budgets-grid > *,
+.settings-grid > * {
+    min-width: 0;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   PREVENT TEXT OVERFLOW
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+    max-width: 100%;
+
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+
+/* =========================================================
+   LARGE SCREEN
+========================================================= */
+
+@media (max-width: 1400px) {
+
+    .sidebar {
+        width: 280px;
+    }
+
+    .dashboard-main {
+        width: calc(100% - 280px);
+        margin-left: 280px;
+
+        padding: 30px;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .search-box {
+        width: 280px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .sidebar {
+        width: 240px;
+    }
+
+    .dashboard-main {
+        width: calc(100% - 240px);
+        margin-left: 240px;
+
+        padding: 25px;
+    }
+
+    .dashboard-content,
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar {
+        align-items: flex-start;
+    }
+
+    .topbar-right {
+        max-width: 50%;
+    }
+
+    .search-box {
+        width: 240px;
+    }
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .sidebar {
+        width: 210px;
+
+        padding: 25px 15px;
+    }
+
+    .dashboard-main {
+        width: calc(100% - 210px);
+        margin-left: 210px;
+
+        padding: 20px;
+    }
+
+    .sidebar-logo {
+        font-size: 23px;
+    }
+
+    .sidebar-menu li a {
+        padding: 13px 12px;
+
+        gap: 10px;
+
+        font-size: 14px;
+    }
+
+    .topbar {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .topbar-right {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .search-box {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .dashboard-layout {
+        display: block;
+
+        width: 100%;
+    }
+
+    .sidebar {
+        position: relative;
+
+        width: 100%;
+        height: auto;
+
+        padding: 18px;
+
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+
+        overflow: hidden;
+    }
+
+    .sidebar-logo {
+        margin-bottom: 20px;
+    }
+
+    .sidebar-menu {
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 8px;
+    }
+
+    .sidebar-menu li {
+        margin: 0;
+    }
+
+    .sidebar-menu li a {
+        justify-content: center;
+
+        padding: 12px 8px;
+
+        font-size: 13px;
+    }
+
+    .dashboard-main {
+        width: 100%;
+
+        margin-left: 0;
+
+        padding: 15px;
+    }
+
+    .topbar {
+        width: 100%;
+
+        margin-bottom: 25px;
+    }
+
+    .topbar h1 {
+        font-size: 28px;
+    }
+
+    .topbar-right {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: minmax(0, 1fr) 52px 52px;
+
+        gap: 8px;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .dashboard-content,
+    .dashboard-grid,
+    .analytics-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .dashboard-widget {
+        padding: 20px;
+
+        margin-bottom: 15px;
+    }
+
+    .chart-placeholder {
+        min-height: 220px;
+
+        padding: 20px;
+    }
+
+    .empty-state {
+        padding: 30px 15px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .dashboard-main {
+        padding: 12px;
+    }
+
+    .sidebar {
+        padding: 15px 10px;
+    }
+
+    .sidebar-menu {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar h1 {
+        font-size: 24px;
+    }
+
+    .topbar-right {
+        grid-template-columns: minmax(0, 1fr) 48px 48px;
+    }
+
+    .notification-btn {
+        width: 48px;
+        height: 48px;
+    }
+
+    .avatar {
+        width: 48px;
+        height: 48px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .dashboard-widget {
+        padding: 18px;
+    }
+}

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | SmartSpend AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <i class="fa-solid fa-wallet"></i>
+
+            <span>SmartSpend AI</span>
+
+        </div>
+
+        <ul class="sidebar-menu">
+
+            <li class="active">
+
+                <a href="dashboard.html">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="expenses.html">
+
+                    <i class="fa-solid fa-receipt"></i>
+
+                    <span>Expenses</span>
+
+                </a>
+
+            </li>
+            <li>
+    <a href="income.html">
+        <i class="fa-solid fa-money-bill-trend-up"></i>
+        <span>Income</span>
+    </a>
+</li>
+            <li>
+
+                <a href="analytics.html">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    <span>Analytics</span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="budgets.html">
+
+                    <i class="fa-solid fa-wallet"></i>
+
+                    <span>Budgets</span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="reports.html">
+
+                    <i class="fa-solid fa-file-lines"></i>
+
+                    <span>Reports</span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="ai.html">
+
+                    <i class="fa-solid fa-robot"></i>
+
+                    <span>AI Assistant</span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="settings.html">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    <span>Settings</span>
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="dashboard-main">
+
+        <!-- Top Bar -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1 id="welcomeMessage">
+
+    Welcome Back 👋
+
+</h1>
+
+                <p>
+
+                    Here's your financial overview.
+
+                </p>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        placeholder="Search expenses, reports...">
+
+                </div>
+
+                <button class="notification-btn">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                </button>
+
+                <img
+    id="dashboardAvatar"
+    class="avatar"
+    src="https://ui-avatars.com/api/?name=User&background=2563EB&color=fff"
+    alt="Profile">
+
+            </div>
+
+        </header>
+
+        <!-- ================= QUICK STATS ================= -->
+
+        <section class="cards-grid">
+
+            <div class="card">
+
+                <div class="card-icon blue">
+
+                    <i class="fa-solid fa-wallet"></i>
+
+                </div>
+
+                <h4>Current Balance</h4>
+
+                <p class="empty-text">
+
+                    No balance available.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-icon green">
+
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+
+                </div>
+
+                <h4>Total Income</h4>
+
+                <p class="empty-text">
+
+                    No income added yet.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-icon red">
+
+                    <i class="fa-solid fa-arrow-trend-down"></i>
+
+                </div>
+
+                <h4>Total Expenses</h4>
+
+                <p class="empty-text">
+
+                    No expenses recorded.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-icon purple">
+
+                    <i class="fa-solid fa-piggy-bank"></i>
+
+                </div>
+
+                <h4>Savings</h4>
+
+                <p class="empty-text">
+
+                    Savings will appear here.
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ================= DASHBOARD GRID ================= -->
+
+        <section class="dashboard-content">
+
+            <div class="dashboard-left">
+<!-- AI INSIGHT -->
+
+<div class="dashboard-widget ai-widget">
+
+    <div class="widget-header">
+
+        <h3>
+
+            🤖 AI Financial Insight
+
+        </h3>
+
+    </div>
+
+    <div class="widget-body">
+
+        <div class="empty-state">
+
+            <i class="fa-solid fa-robot"></i>
+
+            <h4>No AI Insights Yet</h4>
+
+            <p>
+
+                Add your income and expenses.
+
+                SmartSpend AI will automatically analyze your
+                financial habits and generate personalized insights.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- SPENDING ANALYTICS -->
+
+<div class="dashboard-widget">
+
+    <div class="widget-header">
+
+        <h3>
+
+            Spending Analytics
+
+        </h3>
+
+    </div>
+
+    <div class="widget-body chart-placeholder">
+
+        <i class="fa-solid fa-chart-line"></i>
+
+        <h4>No Analytics Available</h4>
+
+        <p>
+
+            Your charts will appear here once expenses
+            are recorded.
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- RECENT TRANSACTIONS -->
+
+<div class="dashboard-widget">
+
+    <div class="widget-header">
+
+        <h3>
+
+            Recent Transactions
+
+        </h3>
+
+    </div>
+
+    <div class="widget-body">
+
+        <div class="empty-state">
+
+            <i class="fa-solid fa-folder-open"></i>
+
+            <h4>No Transactions</h4>
+
+            <p>
+
+                Your latest transactions will be displayed here.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<!-- RIGHT PANEL -->
+
+<div class="dashboard-right">
+
+<!-- FINANCIAL HEALTH -->
+
+<div class="dashboard-widget">
+
+    <div class="widget-header">
+
+        <h3>
+
+            Financial Health
+
+        </h3>
+
+    </div>
+
+    <div class="widget-body">
+
+        <div class="score-circle">
+
+            --
+
+        </div>
+
+        <h4>
+
+            Waiting for Analysis
+
+        </h4>
+
+        <p>
+
+            Your Financial Health Score will be generated
+            after enough financial data is available.
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- BUDGET -->
+
+<div class="dashboard-widget">
+
+    <div class="widget-header">
+
+        <h3>
+
+            Monthly Budget
+
+        </h3>
+
+    </div>
+
+    <div class="widget-body">
+
+        <div class="progress">
+
+            <div class="progress-fill"></div>
+
+        </div>
+
+        <p>
+
+            Create your first budget to begin tracking.
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- UPCOMING BILLS -->
+
+<div class="dashboard-widget">
+
+    <div class="widget-header">
+
+        <h3>
+
+            Upcoming Bills
+
+        </h3>
+
+    </div>
+
+    <div class="widget-body">
+
+        <div class="empty-state">
+
+            <i class="fa-solid fa-calendar-days"></i>
+
+            <h4>
+
+                No Bills Added
+
+            </h4>
+
+            <p>
+
+                Bills and reminders will appear here.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- QUICK ACTIONS -->
+
+<div class="dashboard-widget">
+
+    <div class="widget-header">
+
+        <h3>
+
+            Quick Actions
+
+        </h3>
+
+    </div>
+
+    <div class="widget-body">
+
+       <button
+    class="btn-primary"
+    style="width:100%;margin-bottom:12px;"
+    onclick="window.location.href='expenses.html'">
+    + Add Expense
+</button>
+
+        <button class="btn-outline" style="width:100%;">
+
+            + Create Budget
+
+        </button>
+        <button
+    id="addIncomeBtn"
+    class="quick-income-btn"
+    onclick="window.location.href='income.html'">
+    + Add Income
+</button>
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+
+<script src="js/app.js"></script>
+
+</body>
+
+</html>

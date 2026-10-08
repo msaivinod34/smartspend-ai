@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Expenses | SmartSpend AI</title>
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet"
+        href="css/style.css">
+
+    <link rel="stylesheet"
+        href="css/dashboard.css">
+
+    <link rel="stylesheet"
+        href="css/expenses.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+<!-- ======================
+SIDEBAR
+====================== -->
+
+<aside class="sidebar">
+
+<div class="sidebar-logo">
+
+<i class="fa-solid fa-wallet"></i>
+
+<span>SmartSpend AI</span>
+
+</div>
+
+<ul class="sidebar-menu">
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Dashboard</span>
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="expenses.html">
+
+<i class="fa-solid fa-receipt"></i>
+
+<span>Expenses</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="analytics.html">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<span>Analytics</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="budgets.html">
+
+<i class="fa-solid fa-wallet"></i>
+
+<span>Budgets</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="reports.html">
+
+<i class="fa-solid fa-file-lines"></i>
+
+<span>Reports</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="ai.html">
+
+<i class="fa-solid fa-robot"></i>
+
+<span>AI Assistant</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!-- ======================
+MAIN
+====================== -->
+
+<main class="dashboard-main">
+
+<header class="topbar">
+
+<div>
+
+<h1>
+
+Expense Management
+
+</h1>
+
+<p>
+
+Manage cash expenses, upload bank statements and export reports.
+
+</p>
+
+</div>
+
+<div class="topbar-right">
+
+<div class="search-box">
+
+<i class="fa-solid fa-search"></i>
+
+<input
+type="text"
+id="searchExpense"
+placeholder="Search expenses...">
+
+</div>
+
+<button class="notification-btn">
+
+<i class="fa-regular fa-bell"></i>
+
+</button>
+
+<img
+
+id="dashboardAvatar"
+
+class="avatar"
+
+src="https://ui-avatars.com/api/?name=User&background=2563EB&color=fff"
+
+alt="Profile">
+
+</div>
+
+</header>
+<!-- ==========================================
+EXPENSE TOOLBAR
+========================================== -->
+
+<section class="expense-toolbar">
+    <!-- Month Selector -->
+<div class="month-selector">
+    <i class="fa-solid fa-calendar-days"></i>
+
+    <div class="month-selector-content">
+        <span>Viewing Month</span>
+
+        <input
+            type="month"
+            id="expenseMonth">
+    </div>
+</div>
+    <!-- Search Merchant -->
+
+    <div class="toolbar-search">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+            type="text"
+            id="merchantSearch"
+            placeholder="Search Merchant">
+
+    </div>
+
+    <!-- Category Filter -->
+
+    <select id="filterCategory">
+
+        <option value="">All Categories</option>
+
+        <option>Food</option>
+        <option>Shopping</option>
+        <option>Fuel</option>
+        <option>Travel</option>
+        <option>Bills</option>
+        <option>Medical</option>
+        <option>Education</option>
+        <option>Entertainment</option>
+        <option>Investment</option>
+        <option>Others</option>
+
+    </select>
+
+    <!-- Payment Filter -->
+
+    <select id="filterPayment">
+
+        <option value="">All Payments</option>
+
+        <option>Cash</option>
+        <option>UPI</option>
+        <option>Debit Card</option>
+        <option>Credit Card</option>
+        <option>Wallet</option>
+        <option>Net Banking</option>
+
+    </select>
+
+    <!-- Buttons -->
+
+    <div class="toolbar-buttons">
+
+        <!-- Add Expense -->
+
+        <button
+            id="openExpenseModal"
+            class="add-expense-btn">
+
+            <i class="fa-solid fa-plus"></i>
+
+            Add Expense
+
+        </button>
+
+        <!-- Upload Statement -->
+
+        <button
+            id="uploadStatementBtn"
+            class="upload-btn">
+
+            <i class="fa-solid fa-file-arrow-up"></i>
+
+            Upload Statement
+
+        </button>
+
+        <!-- Export PDF -->
+
+        <button
+            id="exportPDF"
+            class="pdf-btn">
+
+            <i class="fa-solid fa-file-pdf"></i>
+
+            Export PDF
+
+        </button>
+
+        <!-- Export CSV -->
+
+        <button
+            id="exportCSV"
+            class="csv-btn">
+
+            <i class="fa-solid fa-file-csv"></i>
+
+            Export CSV
+
+        </button>
+
+    </div>
+
+</section>
+<!-- ==========================================
+EXPENSE SUMMARY
+========================================== -->
+
+<section class="expense-summary">
+
+    <!-- Total Expenses -->
+
+    <div class="summary-card">
+
+        <div class="summary-icon total">
+
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+
+        </div>
+
+        <div class="summary-content">
+
+            <h5>Total Expenses</h5>
+
+            <h2 id="totalExpense">
+
+                ₹0.00
+
+            </h2>
+
+            <p>
+
+                Total spending this month
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Total Transactions -->
+
+    <div class="summary-card">
+
+        <div class="summary-icon transactions">
+
+            <i class="fa-solid fa-receipt"></i>
+
+        </div>
+
+        <div class="summary-content">
+
+            <h5>Total Transactions</h5>
+
+            <h2 id="totalTransactions">
+
+                0
+
+            </h2>
+
+            <p>
+
+                Imported + Manual Entries
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Top Category -->
+
+    <div class="summary-card">
+
+        <div class="summary-icon category">
+
+            <i class="fa-solid fa-layer-group"></i>
+
+        </div>
+
+        <div class="summary-content">
+
+            <h5>Top Category</h5>
+
+            <h2 id="topCategory">
+
+                --
+
+            </h2>
+
+            <p>
+
+                Highest spending category
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Payment Method -->
+
+    <div class="summary-card">
+
+        <div class="summary-icon payment">
+
+            <i class="fa-solid fa-credit-card"></i>
+
+        </div>
+
+        <div class="summary-content">
+
+            <h5>Most Used Payment</h5>
+
+            <h2 id="topPayment">
+
+                --
+
+            </h2>
+
+            <p>
+
+                Cash / UPI / Card
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+EXPENSE TABLE
+========================================== -->
+
+<section class="expense-table-card">
+
+    <div class="table-header">
+
+        <h2>
+
+            <i class="fa-solid fa-table"></i>
+
+            Expense Transactions
+
+        </h2>
+
+        <span id="expenseCount">
+
+            0 Records
+
+        </span>
+
+    </div>
+
+    <div class="table-responsive">
+
+        <table class="expense-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>Date</th>
+
+                    <th>Merchant</th>
+
+                    <th>Category</th>
+
+                    <th>Payment</th>
+
+                    <th>Amount</th>
+
+                    <th>Source</th>
+
+                    <th>Status</th>
+
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="expenseTableBody">
+
+                <tr>
+
+                    <td colspan="8">
+
+                        <div class="empty-state">
+
+                            <i class="fa-solid fa-wallet"></i>
+
+                            <h3>
+
+                                No Expenses Available
+
+                            </h3>
+
+                            <p>
+
+                                Add a manual expense or upload a bank statement to begin tracking your spending.
+
+                            </p>
+
+                            <button
+                                id="emptyAddExpense"
+                                class="btn-primary">
+
+                                <i class="fa-solid fa-plus"></i>
+
+                                Add First Expense
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+<!-- ==========================================
+ADD EXPENSE MODAL
+========================================== -->
+
+<div id="expenseModal" class="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>
+
+                <i class="fa-solid fa-wallet"></i>
+
+                Add New Expense
+
+            </h2>
+
+            <button
+                id="closeModal"
+                type="button">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+        <form id="expenseForm">
+
+            <div class="form-grid">
+
+                <!-- Merchant -->
+
+                <div class="input-group">
+
+                    <label>Merchant *</label>
+
+                    <input
+                        type="text"
+                        id="expenseTitle"
+                        placeholder="Merchant Name"
+                        required>
+
+                </div>
+
+                <!-- Amount -->
+
+                <div class="input-group">
+
+                    <label>Amount *</label>
+
+                    <input
+                        type="number"
+                        id="expenseAmount"
+                        placeholder="₹0.00"
+                        required>
+
+                </div>
+
+                <!-- Category -->
+
+                <div class="input-group">
+
+                    <label>Category *</label>
+
+                    <select id="expenseCategory">
+
+                        <option>Food</option>
+                        <option>Shopping</option>
+                        <option>Fuel</option>
+                        <option>Travel</option>
+                        <option>Bills</option>
+                        <option>Medical</option>
+                        <option>Education</option>
+                        <option>Entertainment</option>
+                        <option>Investment</option>
+                        <option>Transportation</option>
+                        <option>Others</option>
+
+                    </select>
+
+                </div>
+
+                <!-- Payment -->
+
+                <div class="input-group">
+
+                    <label>Payment Method *</label>
+
+                    <select id="payment">
+
+                        <option>Cash</option>
+                        <option>UPI</option>
+                        <option>Debit Card</option>
+                        <option>Credit Card</option>
+                        <option>Wallet</option>
+                        <option>Net Banking</option>
+
+                    </select>
+
+                </div>
+
+                <!-- Date -->
+
+                <div class="input-group">
+
+                    <label>Date *</label>
+
+                    <input
+                        type="date"
+                        id="expenseDate"
+                        required>
+
+                </div>
+
+                <!-- Time -->
+
+                <div class="input-group">
+
+                    <label>Time</label>
+
+                    <input
+                        type="time"
+                        id="expenseTime">
+
+                </div>
+
+                <!-- Transaction Type -->
+
+                <div class="input-group">
+
+                    <label>Transaction Type</label>
+
+                    <select id="transactionType">
+
+                        <option>Personal</option>
+                        <option>Business</option>
+
+                    </select>
+
+                </div>
+
+                <!-- Source -->
+
+                <div class="input-group">
+
+                    <label>Source</label>
+
+                    <input
+    type="hidden"
+    id="expenseSource"
+    value="Manual">
+
+                </div>
+
+            </div>
+
+            <!-- Description -->
+
+            <div class="input-group">
+
+                <label>Description</label>
+
+                <textarea
+                    id="description"
+                    rows="3"
+                    placeholder="Expense description"></textarea>
+
+            </div>
+
+            <!-- Notes -->
+
+            <div class="input-group">
+
+                <label>Notes</label>
+
+                <textarea
+                    id="notes"
+                    rows="3"
+                    placeholder="Additional notes"></textarea>
+
+            </div>
+
+            <!-- Tags -->
+
+            <div class="input-group">
+
+                <label>Tags</label>
+
+                <input
+                    type="text"
+                    id="tags"
+                    placeholder="office, food, travel">
+
+            </div>
+
+            <!-- Location -->
+
+            <div class="input-group">
+
+                <label>Location</label>
+
+                <input
+                    type="text"
+                    id="location"
+                    placeholder="Expense Location">
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    id="cancelExpense"
+                    class="btn-outline">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn-primary">
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Save Expense
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+<!-- ==========================================
+IMPORT STATEMENT MODAL
+========================================== -->
+
+<div id="statementModal" class="modal">
+
+    <div class="modal-content upload-modal">
+
+        <div class="modal-header">
+
+            <h2>
+
+                <i class="fa-solid fa-file-import"></i>
+
+                Import Statement
+
+            </h2>
+
+            <button
+                id="closeStatementModal"
+                type="button">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+        <form id="statementForm">
+
+            <!-- Upload PDF -->
+
+            <div class="input-group">
+
+                <label>Choose Statement File</label>
+
+                <input
+    type="file"
+    id="statementFile"
+    accept=".pdf,.csv"
+    required>
+            </div>
+
+            <!-- Password -->
+
+            <div class="input-group">
+
+                <label>PDF Password (Optional)</label>
+
+                <input
+                    type="password"
+                    id="statementPassword"
+                    placeholder="Enter password if PDF is protected">
+
+            </div>
+
+            <!-- AI Features -->
+
+            <div class="statement-features">
+
+                <h3>
+
+                    <i class="fa-solid fa-robot"></i>
+
+                    SmartSpend AI will automatically
+
+                </h3>
+
+                <div class="feature-list">
+
+                    <div class="feature-item">
+
+                        <i class="fa-solid fa-file-pdf"></i>
+
+                        Analyze uploaded PDF
+
+                    </div>
+
+                    <div class="feature-item">
+
+                        <i class="fa-solid fa-list-check"></i>
+
+                        Detect transactions
+
+                    </div>
+
+                    <div class="feature-item">
+
+                        <i class="fa-solid fa-tags"></i>
+
+                        Categorize expenses
+
+                    </div>
+
+                    <div class="feature-item">
+
+                        <i class="fa-solid fa-copy"></i>
+
+                        Remove duplicates
+
+                    </div>
+
+                    <div class="feature-item">
+
+                        <i class="fa-solid fa-database"></i>
+
+                        Save to database
+
+                    </div>
+
+                    <div class="feature-item">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                        Update dashboard
+
+                    </div>
+                    <div class="feature-item">
+
+    <i class="fa-solid fa-lightbulb"></i>
+
+    Generate AI Insights
+
+</div>
+
+                </div>
+
+            </div>
+
+            <!-- Progress -->
+
+            <div
+                id="importProgress"
+                class="import-progress"
+                style="display:none;">
+
+                <div class="progress-bar">
+
+                    <div id="progressFill"></div>
+
+                </div>
+
+                <p id="progressText">
+
+                    Preparing...
+
+                </p>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    id="cancelStatement"
+                    class="btn-outline">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="submit"
+                    id="analyzeStatementBtn"
+                    class="btn-primary">
+
+                    <i class="fa-solid fa-upload"></i>
+
+                    Analyze & Import
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+<!-- ==========================================
+JAVASCRIPT LIBRARIES
+========================================== -->
+
+<!-- jsPDF -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<!-- Auto Table -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+
+<!-- Chart.js (Future Analytics) -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- SmartSpend Scripts -->
+
+<script src="js/app.js"></script>
+
+<script src="js/dashboard.js"></script>
+
+<script src="js/expenses.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>AI Assistant | SmartSpend AI</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="stylesheet"
+href="css/style.css">
+
+<link rel="stylesheet"
+href="css/dashboard.css">
+
+<link rel="stylesheet"
+href="css/ai.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+
+<div class="sidebar-logo">
+
+<i class="fa-solid fa-wallet"></i>
+
+<span>SmartSpend AI</span>
+
+</div>
+
+<ul class="sidebar-menu">
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Dashboard</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="expenses.html">
+
+<i class="fa-solid fa-receipt"></i>
+
+<span>Expenses</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="analytics.html">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<span>Analytics</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="budgets.html">
+
+<i class="fa-solid fa-wallet"></i>
+
+<span>Budgets</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="reports.html">
+
+<i class="fa-solid fa-file-lines"></i>
+
+<span>Reports</span>
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="ai.html">
+
+<i class="fa-solid fa-robot"></i>
+
+<span>AI Assistant</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!-- Main -->
+
+<main class="dashboard-main">
+
+<header class="topbar">
+
+<div>
+
+<h1>
+
+🤖 AI Financial Assistant
+
+</h1>
+
+<p>
+
+Ask SmartSpend AI anything about your finances.
+
+</p>
+
+</div>
+
+</header>
+
+<!-- AI Chat -->
+
+<section class="ai-chat-card">
+
+<div class="chat-header">
+
+<i class="fa-solid fa-robot"></i>
+
+<h2>
+
+SmartSpend AI
+
+</h2>
+
+</div>
+
+<div class="chat-body">
+
+<div class="ai-message">
+
+Hello 👋
+
+I'm your financial assistant.
+
+I can help you understand expenses, budgets, reports and savings.
+
+Once your backend is connected, I'll analyze your actual financial data.
+
+</div>
+
+</div>
+
+<div class="chat-input">
+
+<input
+
+type="text"
+
+placeholder="Ask anything about your finances...">
+
+<button>
+
+<i class="fa-solid fa-paper-plane"></i>
+
+</button>
+
+</div>
+
+</section>
+
+<!-- AI Features -->
+
+<section class="ai-grid">
+<!-- ==========================================
+AI INSIGHTS
+========================================== -->
+
+<div class="dashboard-widget">
+
+    <div class="widget-header">
+
+        <h3>
+
+            💡 AI Insights
+
+        </h3>
+
+    </div>
+
+    <div class="empty-state">
+
+        <i class="fa-solid fa-lightbulb"></i>
+
+        <h4>
+
+            No Insights Yet
+
+        </h4>
+
+        <p>
+
+            SmartSpend AI will automatically identify spending habits and suggest ways to improve your financial health.
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+FINANCIAL HEALTH
+========================================== -->
+
+<div class="dashboard-widget">
+
+    <div class="widget-header">
+
+        <h3>
+
+            ❤️ Financial Health
+
+        </h3>
+
+    </div>
+
+    <div class="empty-state">
+
+        <i class="fa-solid fa-heart-pulse"></i>
+
+        <h4>
+
+            Health Score Unavailable
+
+        </h4>
+
+        <p>
+
+            Your financial health score will be calculated from your expenses, income, savings and budgets.
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+SPENDING PREDICTION
+========================================== -->
+
+<div class="dashboard-widget">
+
+    <div class="widget-header">
+
+        <h3>
+
+            📈 Spending Prediction
+
+        </h3>
+
+    </div>
+
+    <div class="empty-state">
+
+        <i class="fa-solid fa-chart-line"></i>
+
+        <h4>
+
+            No Prediction Available
+
+        </h4>
+
+        <p>
+
+            AI will forecast your next month's spending based on historical financial data.
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+BUDGET RECOMMENDATIONS
+========================================== -->
+
+<div class="dashboard-widget">
+
+    <div class="widget-header">
+
+        <h3>
+
+            🎯 Budget Recommendations
+
+        </h3>
+
+    </div>
+
+    <div class="empty-state">
+
+        <i class="fa-solid fa-wallet"></i>
+
+        <h4>
+
+            No Recommendations
+
+        </h4>
+
+        <p>
+
+            Personalized budget recommendations will appear after your spending patterns are analyzed.
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+AI HISTORY
+========================================== -->
+
+<div class="dashboard-widget">
+
+    <div class="widget-header">
+
+        <h3>
+
+            💬 Conversation History
+
+        </h3>
+
+    </div>
+
+    <div class="empty-state">
+
+        <i class="fa-solid fa-comments"></i>
+
+        <h4>
+
+            No Conversations
+
+        </h4>
+
+        <p>
+
+            Your previous conversations with SmartSpend AI will appear here.
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+QUICK QUESTIONS
+========================================== -->
+
+<div class="dashboard-widget">
+
+    <div class="widget-header">
+
+        <h3>
+
+            🚀 Quick Questions
+
+        </h3>
+
+    </div>
+
+    <div class="widget-body">
+
+        <button class="btn-outline" style="width:100%;margin-bottom:12px;">
+
+            Where did I spend the most?
+
+        </button>
+
+        <button class="btn-outline" style="width:100%;margin-bottom:12px;">
+
+            How can I save more?
+
+        </button>
+
+        <button class="btn-outline" style="width:100%;margin-bottom:12px;">
+
+            Show this month's summary
+
+        </button>
+
+        <button class="btn-outline" style="width:100%;">
+
+            Suggest a monthly budget
+
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+<script src="js/dashboard.js"></script>
+
+<script src="js/ai.js"></script>
+
+</body>
+
+</html>
